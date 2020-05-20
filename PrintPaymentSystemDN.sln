@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintPaymentSystemDN", "PrintPaymentSystemDN\PrintPaymentSystemDN.csproj", "{4627F9E7-088D-4222-8FB2-0ACBFD96674F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{CF63ABE9-E296-4165-88A0-B9D7B8A08067}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{0BB07A09-3434-46D8-921E-3A835EA86436}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{2DBE5192-857B-4D85-BFE9-E4E5ED09DD04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSOAPWebService", "..\CreateSOAPWebService\CreateSOAPWebService\CreateSOAPWebService.csproj", "{52185EB3-E932-4890-B3C0-F5C0B2D30523}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWinForm", "AWinForm\AWinForm.csproj", "{75B71B26-279E-4506-A3AE-8659F09EC6F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4627F9E7-088D-4222-8FB2-0ACBFD96674F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4627F9E7-088D-4222-8FB2-0ACBFD96674F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4627F9E7-088D-4222-8FB2-0ACBFD96674F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4627F9E7-088D-4222-8FB2-0ACBFD96674F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF63ABE9-E296-4165-88A0-B9D7B8A08067}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF63ABE9-E296-4165-88A0-B9D7B8A08067}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF63ABE9-E296-4165-88A0-B9D7B8A08067}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +31,14 @@ Global
 		{2DBE5192-857B-4D85-BFE9-E4E5ED09DD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DBE5192-857B-4D85-BFE9-E4E5ED09DD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DBE5192-857B-4D85-BFE9-E4E5ED09DD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52185EB3-E932-4890-B3C0-F5C0B2D30523}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52185EB3-E932-4890-B3C0-F5C0B2D30523}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52185EB3-E932-4890-B3C0-F5C0B2D30523}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52185EB3-E932-4890-B3C0-F5C0B2D30523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75B71B26-279E-4506-A3AE-8659F09EC6F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75B71B26-279E-4506-A3AE-8659F09EC6F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75B71B26-279E-4506-A3AE-8659F09EC6F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75B71B26-279E-4506-A3AE-8659F09EC6F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,7 @@ namespace DAL
         {
             String account = "";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["db_API"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["PrinterDN"].ConnectionString;
 
             try
             {
