@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Printer" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:64838/Printer.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:64838/Printer.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:64838/Printer.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPrinter_ReturnQuotaToQuantity_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnQuotaToQuantity" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_ReturnQuotaToQuantity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReturnQuotaToQuantityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_GetUserAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccount" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_GetUserAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_GetIdByUsername_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdByUsername" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_GetIdByUsername_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIdByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_GetQuotaById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuotaById" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_GetQuotaById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuotaByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_ModifyQuotaById_InputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyQuotaById" />
+  </wsdl:message>
+  <wsdl:message name="IPrinter_ModifyQuotaById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ModifyQuotaByIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPrinter">
+    <wsdl:operation name="ReturnQuotaToQuantity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrinter/ReturnQuotaToQuantity" message="tns:IPrinter_ReturnQuotaToQuantity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrinter/ReturnQuotaToQuantityResponse" message="tns:IPrinter_ReturnQuotaToQuantity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrinter/GetUserAccount" message="tns:IPrinter_GetUserAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrinter/GetUserAccountResponse" message="tns:IPrinter_GetUserAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrinter/CreateUser" message="tns:IPrinter_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrinter/CreateUserResponse" message="tns:IPrinter_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIdByUsername">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrinter/GetIdByUsername" message="tns:IPrinter_GetIdByUsername_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrinter/GetIdByUsernameResponse" message="tns:IPrinter_GetIdByUsername_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrinter/GetQuotaById" message="tns:IPrinter_GetQuotaById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrinter/GetQuotaByIdResponse" message="tns:IPrinter_GetQuotaById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyQuotaById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPrinter/ModifyQuotaById" message="tns:IPrinter_ModifyQuotaById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPrinter/ModifyQuotaByIdResponse" message="tns:IPrinter_ModifyQuotaById_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IPrinter" type="tns:IPrinter">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ReturnQuotaToQuantity">
+      <soap:operation soapAction="http://tempuri.org/IPrinter/ReturnQuotaToQuantity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserAccount">
+      <soap:operation soapAction="http://tempuri.org/IPrinter/GetUserAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IPrinter/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIdByUsername">
+      <soap:operation soapAction="http://tempuri.org/IPrinter/GetIdByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuotaById">
+      <soap:operation soapAction="http://tempuri.org/IPrinter/GetQuotaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyQuotaById">
+      <soap:operation soapAction="http://tempuri.org/IPrinter/ModifyQuotaById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Printer">
+    <wsdl:port name="BasicHttpBinding_IPrinter" binding="tns:BasicHttpBinding_IPrinter">
+      <soap:address location="http://localhost:64838/Printer.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

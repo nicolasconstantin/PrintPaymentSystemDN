@@ -5,22 +5,23 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace DAL
 {
     public class ADDB
     {
-        public static String getUserAccount(String username)
+        public static string GetUserAccount(string username)
         {
-            String account = "";
+            string account = "";
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PrinterDN"].ConnectionString;
+            string connectionString = "Data Source = 153.109.124.35; Initial Catalog = PrinterDN; Persist Security Info = True; User ID = 6231db; Password = Pwd46231.; Pooling = False";
 
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM [AD] WHERE userId = @username";
+                    string query = "SELECT * FROM [AD] WHERE username = @username";
                     // Save command
                     SqlCommand cmd = new SqlCommand(query, cn);
                     cmd.Parameters.AddWithValue("@username", username);
@@ -31,7 +32,7 @@ namespace DAL
                     {
                         if (dr.Read())
                         {
-                            account = (string)dr["userId"];
+                            account = (string)dr["username"] + (string)dr["password"];
                         }
                         else
                         {
@@ -47,5 +48,45 @@ namespace DAL
 
             return account;
         }
+
+        public static AD CreateUser(AD User)
+        {
+            string connectionString = "Data Source = 153.109.124.35; Initial Catalog = PrinterDN; Persist Security Info = True; User ID = 6231db; Password = Pwd46231.; Pooling = False";
+
+            try
+            {
+                // Connexion to the Database
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    // The query
+                    string query = "INSERT INTO AD(firstname,lastname,password,username) values(@Firstname,@Lastname,@password,@username); SELECT SCOPE_IDENTITY()";
+
+                    // Save the command
+                    SqlCommand cmd = new SqlCommand(query, cn);
+
+
+                    cmd.Parameters.AddWithValue("@Firstname", User.Firstname);
+                    cmd.Parameters.AddWithValue("@Lastname", User.Lastname);
+                    cmd.Parameters.AddWithValue("@password", User.Password);
+                    cmd.Parameters.AddWithValue("@username", User.Username);
+
+
+                    // Open the command
+                    cn.Open();
+
+                    // Execute the command
+                    User.UserId = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            // Return the customer
+            return User;
+        }
+
     }
 }

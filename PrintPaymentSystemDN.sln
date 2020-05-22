@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSOAPWebService", "..\CreateSOAPWebService\CreateSOAPWebService\CreateSOAPWebService.csproj", "{52185EB3-E932-4890-B3C0-F5C0B2D30523}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AWinForm", "AWinForm\AWinForm.csproj", "{75B71B26-279E-4506-A3AE-8659F09EC6F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{52185EB3-E932-4890-B3C0-F5C0B2D30523} = {52185EB3-E932-4890-B3C0-F5C0B2D30523}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

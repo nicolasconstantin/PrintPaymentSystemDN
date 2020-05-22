@@ -63,11 +63,17 @@
     <Compile Include="ADDB.cs" />
     <Compile Include="PaymentDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SAPHR.cs" />
+    <Compile Include="SAPHRDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{2dbe5192-857b-4d85-bfe9-e4e5ed09dd04}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

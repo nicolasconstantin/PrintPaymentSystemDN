@@ -1,5 +1,4 @@
-﻿using DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -9,24 +8,21 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class PaymentDB
+    public class SAPHRDB
     {
-
-
-        
-
-        public static decimal GetQuotaByID(int userID)
+        public static int GetIdByUsername(string username)
         {
+
             string connectionString = "Data Source = 153.109.124.35; Initial Catalog = PrinterDN; Persist Security Info = True; User ID = 6231db; Password = Pwd46231.; Pooling = False";
 
             try
             {
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
-                    string query = "SELECT * FROM [Payment] WHERE  " +
-                        " userId = @userID";
+                    string query = "SELECT * FROM [SAPHR] WHERE  " +
+                        " username = @username";
                     SqlCommand cmd = new SqlCommand(query, cn);
-                    cmd.Parameters.AddWithValue("@userID", userID);
+                    cmd.Parameters.AddWithValue("@username", username);
 
                     cn.Open();
 
@@ -34,7 +30,7 @@ namespace DAL
                     {
                         if (dr.Read())
                         {
-                            return (decimal)dr["quota"];
+                            return (int)dr["userId"];
                         }
                         else
                         {
@@ -47,9 +43,11 @@ namespace DAL
             {
                 throw e;
             }
+
+
         }
 
-        public static void CreatePayment(int userID)
+        public static void CreateSAPHR(int userID, string username)
         {
             string connectionString = "Data Source = 153.109.124.35; Initial Catalog = PrinterDN; Persist Security Info = True; User ID = 6231db; Password = Pwd46231.; Pooling = False";
 
@@ -59,15 +57,14 @@ namespace DAL
                 using (SqlConnection cn = new SqlConnection(connectionString))
                 {
                     // The query
-                    string query = "INSERT INTO Payment(quota,userId) values(@quota,@userID); SELECT SCOPE_IDENTITY()";
+                    string query = "INSERT INTO SAPHR(userId,username) values(@userID,@username); SELECT SCOPE_IDENTITY()";
 
                     // Save the command
                     SqlCommand cmd = new SqlCommand(query, cn);
 
 
-                    cmd.Parameters.AddWithValue("@quota", 0.00);
                     cmd.Parameters.AddWithValue("@userID", userID);
-
+                    cmd.Parameters.AddWithValue("@username", username);
 
 
                     // Open the command
@@ -84,42 +81,6 @@ namespace DAL
                 throw e;
             }
 
-        }
-
-        public static void ModifyQuotaById(int userID, decimal quota)
-        {
-
-            string connectionString = "Data Source = 153.109.124.35; Initial Catalog = PrinterDN; Persist Security Info = True; User ID = 6231db; Password = Pwd46231.; Pooling = False";
-            try
-            {
-                // Connexion to the Database
-                using (SqlConnection cn = new SqlConnection(connectionString))
-                {
-                    // The query
-                    string query = "UPDATE Payment Set quota=@quota WHERE userId = @userID";
-
-                    // Save the command
-                    SqlCommand cmd = new SqlCommand(query, cn);
-
-                    cmd.Parameters.AddWithValue("@quota", quota);
-                    cmd.Parameters.AddWithValue("@userID", userID);
-
-
-
-                    // Open the command
-                    cn.Open();
-
-                    // Execute the command
-                    cmd.ExecuteNonQuery();
-
-                }
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-           
-            
         }
     }
 }
